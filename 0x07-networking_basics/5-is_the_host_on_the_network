@@ -7,8 +7,8 @@
 # Ping 5 times
 
 if [ "$#" -lt "1" ]
-    then
-        echo Usage: 5-is_the_host_on_the_network {IP_ADDRESS}
-    else
-        ping "$1" -c 5
+   then
+       echo Usage: 5-is_the_host_on_the_network {IP_ADDRESS}
+   else
+       ping "$1" -c 5
 fi
