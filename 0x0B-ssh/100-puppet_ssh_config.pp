@@ -8,7 +8,7 @@ content =>"
 
         #SSH client configuration
 	host*
-	IdentityFile ~/.ssh/school
+	IdentityFile /alx-system_engineering-devops/0x0B-ssh/school
 	PasswordAuthentication no
 	",
 }
