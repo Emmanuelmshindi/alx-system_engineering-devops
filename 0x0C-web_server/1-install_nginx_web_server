@@ -2,8 +2,8 @@
 # Command to install nginx on web server
 
 # Update packages and install nginx
-sudo apt-get update
-sudo apt-get install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
 
 # Specify port 80
 sudo ufw 'Nginx HTTP'
@@ -16,3 +16,5 @@ sudo nginx -t
 
 # Reload nginx
 sudo service nginx reload
+
+sudo service nginx start
