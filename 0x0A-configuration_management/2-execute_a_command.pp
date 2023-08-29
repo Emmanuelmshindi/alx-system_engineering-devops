@@ -1,8 +1,7 @@
-/*
-  Manifest that kills the process killmenow
-  Must use exec resource and pkill
-*/
+# Manifest that kills the process killmenow
 
 exec { 'killmenow':
-  command => 'pkill killmenow',
+  command  => 'usr/bin/pkill killmenow',
+  provider => 'shell',
+  returns  => [0, 1],
 }
