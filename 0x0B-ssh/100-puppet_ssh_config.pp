@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # Edit configuration file using puppet
 
 file { 'etc/ssh/ssh_config':
