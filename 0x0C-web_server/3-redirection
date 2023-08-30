@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
-# Redirection with a "301 Moved permanently"
+# Script to install nginx on server
 
-sudo apt-get update
-sudo apt-get install -y nginx
+apt-get update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
 
-echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Holberton School for the win!" >> /var/www/html/index.html
 
-string_to_replace="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/Emmanuelmshindi permanent;"
-
-sudo sed -i "s/server_name _;/$string_to_replace/" /etc/nginx/sites-enabled/default
-
-sudo service nginx restart
+sed -i '38i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo service nginx start
