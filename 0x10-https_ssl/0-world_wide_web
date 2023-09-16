@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Bash script showing Ip address for domains and subdomains
+# Accepts domain and subdomain as arguments.Domain is mandatory
+
+function dominfo() {
+
+   # Ensure domain name is provided
+   if [ $# -lt 2 ]; then
+     echo "Domain name is mandatory"
+     exit 1
+   fi
+
+   # Retrieve IP address and record type and store in a variable
+
+   domain=$1
+   subdomain=$2
+
+   if [ -z $subdomain ]; then
+       subdomains=("www" "lb-01" "web-01" "web-02")
+   else
+   # If subdomain argument is provided only process that subdomain
+       subdomains=$subdomain
+   fi
+
+   # Loop through subdomains
+   for subdom in "${subdomains[@]}"; do
+       output=$(dig "${subdom}.${domain}")
+       ip_address=$(echo "$output" | awk '/ANSWER SECTION/ { getline; print $5}')
+       record_type=$(echo "$output" | awk '/ANSWER SECTION/ { getline; print $4}')
+
+       echo "The subdomain $subdom is a $record_type record and points to $ip_address"
+   
+   done
+}
+dominfo "$1" "$2"
