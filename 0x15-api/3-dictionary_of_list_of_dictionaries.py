@@ -3,11 +3,11 @@
 Format: "USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
 File name: USER_ID.csv
 """
-import requests as req
-import sys
+from collections import OrderedDict
 import csv
 import json
-from collections import OrderedDict
+import requests as req
+import sys
 
 if __name__ == "__main__":
 
@@ -23,14 +23,14 @@ if __name__ == "__main__":
             .format(user_id)
         )
 
-        #Get completed status and titles
+        # Get completed status and titles
         resp_tasks = req.get(url2).json()
 
-        #Get name of user
+        # Get name of user
         resp = req.get(url).json()
 
         json_data = OrderedDict()
- 
+
         json_data[user_id] = [
             {
                 "username": resp.get("username"),
