@@ -31,6 +31,6 @@ if __name__ == "__main__":
 
         for task in resp_tasks:
             csv_writer.writerow([(task["userId"]),
-                                 (resp.get("name")),
+                                 (resp.get("username")),
                                  (task["completed"]),
                                  (task["title"])])
