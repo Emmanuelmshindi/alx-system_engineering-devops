@@ -13,7 +13,7 @@ if __name__ == "__main__":
         .format(user_id)
     )
 
-    #Get completed and total tasks
+    # Get completed and total tasks
     resp_tasks = req.get(url2).json()
 
     all_tasks = len(resp_tasks)
@@ -23,7 +23,7 @@ if __name__ == "__main__":
         if task["completed"]:
             done += 1
 
-    #Get name of user
+    # Get name of user
     resp = req.get(url).json()
 
     user_name = resp.get("name")
