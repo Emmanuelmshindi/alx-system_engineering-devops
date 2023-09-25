@@ -18,17 +18,17 @@ if __name__ == "__main__":
         .format(user_id)
     )
 
-    #Get completed status and titles
+    # Get completed status and titles
     resp_tasks = req.get(url2).json()
 
-    #Get name of user
+    # Get name of user
     resp = req.get(url).json()
 
     csv_filename = "{}.csv".format(user_id)
- 
+
     with open(csv_filename, 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-    
+
         for task in resp_tasks:
             csv_writer.writerow([(task["userId"]),
                                  (resp.get("name")),
