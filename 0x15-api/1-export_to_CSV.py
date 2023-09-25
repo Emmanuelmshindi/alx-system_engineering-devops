@@ -3,10 +3,10 @@
 Format: "USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
 File name: USER_ID.csv
 """
-import requests as req
-import sys
 import csv
 import json
+import requests as req
+import sys
 
 if __name__ == "__main__":
 
