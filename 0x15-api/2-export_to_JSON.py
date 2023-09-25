@@ -28,7 +28,7 @@ if __name__ == "__main__":
     json_filename = "{}.json".format(user_id)
 
     json_data = OrderedDict()
- 
+
     json_data[user_id] = [
         {
             "task": task["title"],
