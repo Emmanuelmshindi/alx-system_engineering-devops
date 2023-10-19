@@ -2,7 +2,7 @@
 
 """
 Reddit API Subreddit Subscriber Count
-This module defines a function to query the Reddit API and 
+This module defines a function to query the Reddit API and
 return the number of subscribers for a given subreddit.
 
 Requirements:
@@ -14,6 +14,7 @@ Ensure that you are not following redirects.
 
 import requests
 
+
 def number_of_subscribers(subreddit):
     """
     Retrieves number of subscribers from a given subreddit
@@ -23,7 +24,7 @@ def number_of_subscribers(subreddit):
         Number of subscribers or 0 if subreddit is invalid
     """
     # Define API endpoint url
-    api_url = "https://www.reddit.com/r/{subreddit}/about.json"
+    api_url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
 
     headers = {'User-Agent': 'Custom User-Agent'}
     # GET request to API
