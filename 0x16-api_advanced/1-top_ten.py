@@ -22,7 +22,7 @@ def top_ten(subreddit):
     Return:
         Titles of first 10 hot posts
     """
- 
+
     # Define API endpoint url
     api_url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
 
